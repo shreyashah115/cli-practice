@@ -104,7 +104,7 @@ let convertedRate = "";
 axios
   .get(conversionAPI)
   .then((res) => {
-    convertedRate = res.data[`${initialCurrency}_${targetCurrency}`] * amountg;
+    convertedRate = res.data[`${initialCurrency}_${targetCurrency}`] * amount;
 
     // --------------------------------------------------
     // Step 6: Display results
@@ -113,8 +113,6 @@ axios
     console.log(
       `The converted currency rate for ${initialCurrency} ${amount} to ${targetCurrency} is ${convertedRate}.`
     );
-    // This message should also include the original amount and currency information
-    // supplied by the user.
   })
 
   .catch((err) => {
