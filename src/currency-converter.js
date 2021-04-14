@@ -25,3 +25,26 @@ let targetCurrency = process.argv[4];
 
 initialCurrency = initialCurrency.toUpperCase();
 targetCurrency = targetCurrency.toUpperCase();
+
+// --------------------------------------------------
+// Step 2: Validate user input
+// --------------------------------------------------
+// Next we will ensure that the user has provided all of the require information.
+
+// If any of the required information is missing, display a meaningful message
+// and exit the program.
+
+if (amount === undefined) {
+  console.error("You must provide a valid amount. Please try again.");
+  process.exit();
+}
+
+if (initialCurrency === undefined) {
+  console.error("You must provide a valid initial currency. Please try again.");
+  process.exit();
+}
+
+if (targetCurrency === undefined) {
+  console.error("You must provide a valid target currency. Please try again.");
+  process.exit();
+}
