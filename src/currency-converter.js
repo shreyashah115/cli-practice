@@ -104,7 +104,7 @@ let convertedRate = "";
 axios
   .get(conversionAPI)
   .then((res) => {
-    convertedRate = res.data[`${initialCurrency}_${targetCurrency}`];
+    convertedRate = res.data[`${initialCurrency}_${targetCurrency}`] * amountg;
 
     // --------------------------------------------------
     // Step 6: Display results
