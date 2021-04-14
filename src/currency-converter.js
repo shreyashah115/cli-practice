@@ -54,3 +54,37 @@ if (targetCurrency === undefined) {
 // --------------------------------------------------
 
 // -------------- USING CURRENCY CONVERSION API FOR THIS STEP --------------
+
+// Step 4: Ensure that a conversion rate exists
+// --------------------------------------------------
+// Since it is possible for the user to supply invalid or unsupported currencies,
+// we must check for the presence of a rate before attempting to convert.
+
+// If the user supplies an invalid initial or target currency, display a meaningful
+// warning message and exit the program.
+
+const axios = require("axios");
+
+const supportedEndpointsAPI = `http://data.fixer.io/api/symbols?access_key=${API_KEY}`;
+
+axios
+  .get(supportedEndpointsAPI)
+  .then((res) => {
+    let currencies = res.data.symbols;
+
+    if (currencies[initialCurrency] === undefined) {
+      console.error(
+        "The initial currency is not a valid currency. Please try again."
+      );
+      process.exit();
+    }
+    if (currencies[targetCurrency] === undefined) {
+      console.error(
+        "The target currency is not a valid currency. Please try again."
+      );
+      process.exit();
+    }
+  })
+  .catch((err) => {
+    console.log("Error: ", err.message);
+  });
