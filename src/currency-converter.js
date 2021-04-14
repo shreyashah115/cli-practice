@@ -8,6 +8,8 @@
 // differently. There are many paths and approaches that result in a perfectly
 // valid finished product.
 
+const API_KEY = "f0cd2f101af74318f36b6bb7137bb6fe";
+
 // --------------------------------------------------
 // Step 1: Capture user input
 // --------------------------------------------------
@@ -15,57 +17,11 @@
 
 // We will store each piece of information in a dedicated variable for later use.
 
+// node currency-converter.js 50 USD CAD
 
+const amount = process.argv[2];
+let initialCurrency = process.argv[3];
+let targetCurrency = process.argv[4];
 
-// --------------------------------------------------
-// Step 2: Validate user input
-// --------------------------------------------------
-// Next we will ensure that the user has provided all of the require information.
-
-// If any of the required information is missing, display a meaningful message
-// and exit the program.
-
-
-
-// --------------------------------------------------
-// Step 3: Define currency conversion rates
-// --------------------------------------------------
-// Here we will define which currency conversions are supported, as well as the
-// rates between each currency. We will capture this information as an object
-// and store it in dedicated varaible for later use.
-
-// We will use the official currency abbreviation for each currency (eg. USD, CAD, etc.).
-
-// The conversion rates do not have to be accurate, athough this resource contains
-// up-to-date rate information: https://www.xe.com/
-
-
-
-// --------------------------------------------------
-// Step 4: Ensure that a conversion rate exists
-// --------------------------------------------------
-// Since it is possible for the user to supply invalid or unsupported currencies,
-// we must check for the presence of a rate before attempting to convert.
-
-// If the user supplies an invalid initial or target currency, display a meaningful
-// warning message and exit the program.
-
-
-
-// --------------------------------------------------
-// Step 5: Perform conversion
-// --------------------------------------------------
-// At this point we've confirmed that the user has supplied all of the necessary
-// information, and that a rate exists for each of the currencies.
-
-// Now we will compute the rate, apply it to the amount, and capture the result.
-
-
-
-// --------------------------------------------------
-// Step 6: Display results
-// --------------------------------------------------
-// Finally we will display the result as part of a meaningful message.
-
-// This message should also include the original amount and currency information
-// supplied by the user.
+initialCurrency = initialCurrency.toUpperCase();
+targetCurrency = targetCurrency.toUpperCase();
