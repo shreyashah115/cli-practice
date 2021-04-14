@@ -48,3 +48,9 @@ if (targetCurrency === undefined) {
   console.error("You must provide a valid target currency. Please try again.");
   process.exit();
 }
+
+// --------------------------------------------------
+// Step 3: Define currency conversion rates
+// --------------------------------------------------
+
+// -------------- USING CURRENCY CONVERSION API FOR THIS STEP --------------
