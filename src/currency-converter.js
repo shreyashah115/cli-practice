@@ -74,13 +74,13 @@ axios
 
     if (currencies[initialCurrency] === undefined) {
       console.error(
-        "The initial currency is not a valid currency. Please try again."
+        `The initial currency is not a valid currency. Please try again. Received ${initialCurrency}`
       );
       process.exit();
     }
     if (currencies[targetCurrency] === undefined) {
       console.error(
-        "The target currency is not a valid currency. Please try again."
+        `The target currency is not a valid currency. Please try again. Received ${targetCurrency}`
       );
       process.exit();
     }
