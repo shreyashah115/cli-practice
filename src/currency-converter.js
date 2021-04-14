@@ -88,3 +88,15 @@ axios
   .catch((err) => {
     console.log("Error: ", err.message);
   });
+
+// --------------------------------------------------
+// Step 5: Perform conversion
+// --------------------------------------------------
+// At this point we've confirmed that the user has supplied all of the necessary
+// information, and that a rate exists for each of the currencies.
+
+// Now we will compute the rate, apply it to the amount, and capture the result.
+
+let conversionAPI = `https://free.currconv.com/api/v7/convert?q=${initialCurrency}_${targetCurrency}&compact=ultra&apiKey=33efeb6a1b51c1947137`;
+
+let convertedRate = "";
