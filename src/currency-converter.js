@@ -100,3 +100,23 @@ axios
 let conversionAPI = `https://free.currconv.com/api/v7/convert?q=${initialCurrency}_${targetCurrency}&compact=ultra&apiKey=33efeb6a1b51c1947137`;
 
 let convertedRate = "";
+
+axios
+  .get(conversionAPI)
+  .then((res) => {
+    convertedRate = res.data[`${initialCurrency}_${targetCurrency}`];
+
+    // --------------------------------------------------
+    // Step 6: Display results
+    // --------------------------------------------------
+    // Finally we will display the result as part of a meaningful message.
+    console.log(
+      `The converted currency rate for ${initialCurrency} ${amount} to ${targetCurrency} is ${convertedRate}.`
+    );
+    // This message should also include the original amount and currency information
+    // supplied by the user.
+  })
+
+  .catch((err) => {
+    console.log("Error: ", err.message);
+  });
